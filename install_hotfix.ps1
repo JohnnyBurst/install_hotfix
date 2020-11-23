@@ -1,6 +1,6 @@
 # Run this script / ISE as administrator!
 # Download hotfixes to local computer
-# Update the path of the hotfixes to prevent failure
+# Update the path of the hotfixes to prevent failure. Must be in C:\
 $UpdatePath = "C:\temp"
 
 # Old hotfix list
@@ -22,5 +22,5 @@ ForEach ($update in $Updates) {
     Start-Process -wait wusa -ArgumentList "/update $UpdateFilePath","/quiet","/norestart"
 }
 
-# Old hotfix list66
+# Old hotfix list
 Get-HotFix > "$UpdatePath\new_hotfix_list.txt
